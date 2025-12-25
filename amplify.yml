@@ -1,21 +1,12 @@
 version: 1
-backend:
-  phases:
-    build:
-      commands:
-        - echo "Backend build completed"
 frontend:
   phases:
-    preBuild:
-      commands:
-        - npm install --legacy-peer-deps
     build:
       commands:
-        - npm run build
+        - echo "Skipping build - using pre-built files"
   artifacts:
-    baseDirectory: dist
+    baseDirectory: dist/public
     files:
       - '**/*'
   cache:
-    paths:
-      - node_modules/**/*
+    paths: []
